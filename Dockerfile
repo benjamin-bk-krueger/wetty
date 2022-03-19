@@ -6,7 +6,7 @@ LABEL maintaner="Ben Krueger <sayhello@blk.pm>"
 #LABEL promoted="true"
 
 RUN apt-get update
-RUN apt-get install -y libncurses-dev flex libssl-dev libelf-dev bc bison git curl
+RUN apt-get install -y libncurses-dev flex libssl-dev libelf-dev bc bison git curl sshpass
 RUN DEBIAN_FRONTEND=noninteractive  apt-get install -y npm
 
 RUN curl -sL https://deb.nodesource.com/setup_14.x | bash -
