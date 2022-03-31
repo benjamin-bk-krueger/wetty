@@ -1,1 +1,1 @@
-# wetty
+# Wetty SSH web terminal
