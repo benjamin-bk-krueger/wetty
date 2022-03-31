@@ -12,7 +12,7 @@ RUN DEBIAN_FRONTEND=noninteractive  apt-get install -y npm
 RUN curl -sL https://deb.nodesource.com/setup_14.x | bash -
 RUN apt-get install -y nodejs
 RUN npm install --global yarn
-RUN yarn global add wetty
+RUN yarn global add wetty@2.3.0
 
 RUN apt-get clean
 RUN rm -rf /var/lib/apt/lists/*
