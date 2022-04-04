@@ -1,13 +1,11 @@
 FROM ubuntu:20.04
 
-LABEL version="0.1"
+LABEL version="0.9"
 LABEL maintaner="Ben Krueger <sayhello@blk8.de>"
-#LABEL release-date="2020-04-05"
-#LABEL promoted="true"
 
 RUN apt-get update
 RUN apt-get install -y libncurses-dev flex libssl-dev libelf-dev bc bison git curl sshpass
-RUN DEBIAN_FRONTEND=noninteractive  apt-get install -y npm
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y npm
 
 RUN curl -sL https://deb.nodesource.com/setup_14.x | bash -
 RUN apt-get install -y nodejs
@@ -17,6 +15,10 @@ RUN yarn global add wetty@2.3.0
 RUN apt-get clean
 RUN rm -rf /var/lib/apt/lists/*
 
+RUN useradd -s /bin/false wetty
+
 EXPOSE 3000
 
-CMD ["wetty","-p","3000"]  
+USER wetty
+
+CMD ["wetty","-p","3000"]
