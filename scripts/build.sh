@@ -1,2 +1,2 @@
 #!/bin/sh
-docker build -t benjaminkrueger/wetty:main -f Dockerfile .
+docker build -t benjaminkrueger/wetty:latest -f Dockerfile .
