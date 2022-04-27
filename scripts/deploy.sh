@@ -1,2 +1,2 @@
 #!/bin/sh
-docker push benjaminkrueger/wetty:latest
+docker push benjaminkrueger/wetty:main
