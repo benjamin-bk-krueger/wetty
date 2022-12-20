@@ -15,10 +15,14 @@ RUN yarn global add wetty@2.3.0
 RUN apt-get clean
 RUN rm -rf /var/lib/apt/lists/*
 
-RUN useradd -s /bin/false wetty
+RUN echo "LogLevel=ERROR" >> /etc/ssh/ssh_config
+
+RUN useradd -m -s /bin/false wetty
 
 EXPOSE 3000
 
 USER wetty
+
+RUN mkdir /home/wetty/.ssh
 
 CMD ["wetty","-p","3000"]
